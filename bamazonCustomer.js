@@ -55,6 +55,7 @@ connection.query('SELECT * FROM products', function(error, results, fields) {
                         name = results[i].product_name
                         quantity = results[i].quantity
                         newQ = results[i].quantity - inquirerResponse.units
+                        if (quantity > inquirerResponse.units) {
                             var cost = results[i].price * inquirerResponse.units
                             console.log("-----------------------------------");
                             console.log("Your order has been placed! \nThe total cost is $" + cost.toFixed(2) + "\nThank you!")
