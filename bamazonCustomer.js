@@ -65,25 +65,25 @@ connection.query('SELECT * FROM products', function(error, results, fields) {
                             console.log("Sorry, we do not have enough in stock. \nWe only have " + results[i].quantity + " units of " + name + ". \nPlease retry your order. \nThank you!")
                         }
 
-                        function update(response, newQ) {
-                            connection.query(
-                                "UPDATE products SET ? WHERE ?", [{
-                                        quantity: newQ
-                                    },
-                                    {
-                                        product_name: name
-                                    }
+                        // function update(response, newQ) {
+                        //     connection.query(
+                        //         "UPDATE products SET ? WHERE ?", [{
+                        //                 quantity: newQ
+                        //             },
+                        //             {
+                        //                 product_name: name
+                        //             }
 
-                                ],
-                                function(err, res) {
-                                    connection.end();
+                        //         ],
+                        //         function(err, res) {
+                        //             connection.end();
 
 
-                                }
-                            );
-                        }
+                        //         }
+                        //     );
+                        // }
 
-                        update()
+                        // update()
 
 
 
